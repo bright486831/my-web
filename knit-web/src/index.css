@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #faf6ef;
+  --paper-deep: #f1ead9;
+  --ink: #241d17;
+  --ink-soft: #5b5147;
+  --clay: #a6673f;
+  --clay-soft: #c98a5e;
+  --gold: #b8955a;
+  --rose: #c79a90;
+  --line: rgba(36, 29, 23, 0.12);
+  --line-strong: rgba(36, 29, 23, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--clay);
+  color: var(--paper);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(166, 103, 63, 0.35);
+  border-radius: 4px;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+}
+
+.font-display-kr {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', serif;
+}
+
+.text-hairline {
+  letter-spacing: 0.28em;
+}
+
+.divider-line {
+  background: var(--line);
+}
+
+.glass-panel {
+  background: rgba(250, 246, 239, 0.72);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
